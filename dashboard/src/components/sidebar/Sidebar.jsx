@@ -11,18 +11,41 @@ import SettingsApplicationsIcon from '@mui/icons-material/SettingsApplications';
 import PersonIcon from '@mui/icons-material/Person';
 import LogoutIcon from '@mui/icons-material/Logout';
 import ComputerIcon from '@mui/icons-material/Computer';
+import { Link } from 'react-router-dom';
+
+
 const Sidebar = () => {
   return (
     <div className='sidebar'>
-      <div className='top'><span className='logo'>logo</span></div><hr />
+      <div className='top'>
+        <Link to="/" style={{textDecoration:"none"}} >
+            <span className='logo'>logo</span>
+        </Link>
+        </div><hr />
       <div className='center'>
         <ul>
           <p className='title'>MAIN</p>
-          <li><span><DashboardIcon className='icon' />Dashboard</span></li>
+          <li>
+          <Link to="/" style={{textDecoration:"none"}} >
+            <span><DashboardIcon className='icon' />Dashboard</span>
+            </Link>
+            </li>
           <p className='title'>LISTS</p>
-          <li><span><PeopleIcon className='icon' />Users</span></li>
-          <li><span><AddBusinessIcon className='icon' />Products</span></li>
-          <li><span><CreditCardIcon className='icon' />Orders</span></li>
+          <li>
+          <Link to="/users" style={{textDecoration:"none"}} >
+            <span><PeopleIcon className='icon' />Users</span>
+            </Link>
+            </li>
+          <li>
+          <Link to="/products" style={{textDecoration:"none"}} >
+            <span><AddBusinessIcon className='icon' />Products</span>
+            </Link>
+            </li>
+          <li>
+          <Link to="/orders" style={{textDecoration:"none"}} >
+            <span><CreditCardIcon className='icon' />Orders</span>
+            </Link>
+            </li>
           <li><span><LocalShippingIcon className='icon' />Delivery</span></li>
           <p className='title'>USEFUL</p>
           <li><span><PieChartIcon className='icon' />Stats</span></li>

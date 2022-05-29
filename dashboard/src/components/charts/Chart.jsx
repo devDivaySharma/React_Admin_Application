@@ -1,44 +1,36 @@
 import React from 'react';
-import {Chart, ArcElement} from 'chart.js'
-import { Doughnut } from 'react-chartjs-2';
+import { Line } from 'react-chartjs-2'
+import { Chart as ChartJS } from 'chart.js/auto';
+
+
+const data = {
+  labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
+  datasets: [
+    {
+      label: "First dataset",
+      data: [33, 53, 85, 41, 44, 65],
+      fill: true,
+      backgroundColor: "rgba(75,192,192,0.2)",
+      borderColor: "rgba(75,192,192,1)"
+    },
+    {
+      label: "Second dataset",
+      data: [33, 25, 35, 51, 54, 76],
+      fill: false,
+      borderColor: "#742774"
+    }
+  ]
+};
 
 export const Charts = () => {
-
-  const dataMain = {
-    labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-    datasets: [
-      {
-        label: '# of Votes',
-        data: [12, 19, 3, 5, 2, 3],
-        backgroundColor: [
-          'rgba(255, 99, 132, 0.2)',
-          'rgba(54, 162, 235, 0.2)',
-          'rgba(255, 206, 86, 0.2)',
-          'rgba(75, 192, 192, 0.2)',
-          'rgba(153, 102, 255, 0.2)',
-          'rgba(255, 159, 64, 0.2)',
-        ],
-        borderColor: [
-          'rgba(255, 99, 132, 1)',
-          'rgba(54, 162, 235, 1)',
-          'rgba(255, 206, 86, 1)',
-          'rgba(75, 192, 192, 1)',
-          'rgba(153, 102, 255, 1)',
-          'rgba(255, 159, 64, 1)',
-        ],
-        borderWidth: 1,
-      },
-    ],
-  };
 
   return (
     <div className='chart'>
       <div className='title'>Last 6 Months (Revenue)</div>
-      <Doughnut data={dataMain} options={{}} />
+      <Line data={data}  height={100} />
     </div>
   )
 }
-Chart.register(ArcElement);
 
 export default Charts;
 

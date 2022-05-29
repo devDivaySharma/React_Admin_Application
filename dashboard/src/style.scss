@@ -76,6 +76,40 @@ body {
             padding: 5px 20px;
         }
     }
+    .listContainer {
+        box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
+        padding: 20px;
+        margin: 20px;
+
+        .table {
+            .status{
+                padding: 5px;
+                border-radius: 5px;
+        
+                &.Approved{
+                    color: green;
+                    background-color: green;
+                }
+        
+                &.Rejected{
+                    color: red;
+                    background-color: rgba(250, 73, 73);
+                }
+        
+                &.Pending{
+                    color: yellow;
+                    background-color: rgba(0,128,0,0.151);
+                }
+            }
+        
+        }
+    }
+
+    .listTitle{
+        font-weight: 500;
+        color: gray;
+        margin-bottom: 15px;
+    }
 }
 
 .sidebar {
@@ -334,5 +368,230 @@ body {
                 }
             }
         }
+    }
+}
+
+.list{
+    display: flex;
+    width: 100%;
+    .listContainer{
+        flex: 6;
+    }
+    .dataTable{
+        height: 80vh;
+        padding: 20px;
+
+        .dataTableTitle{
+
+            width: 100%;
+            font-size: 24px;
+            color: gray;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .link{
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 400;
+            color: greenyellow;
+            padding: 5px;
+            border: 1px solid green;
+            border-radius: 5px;
+        }
+
+        .cellAction{
+            display: flex;
+            align-items: center;
+            gap: 15px;
+
+            .viewButton{
+                padding: 2px 5px;
+                border-radius: 5px;
+                color: darkblue;
+                border: 1px dotted rgba($color: darkblue, $alpha: 1.0) ;
+                cursor: pointer;
+            }
+
+            .deleteButton{
+                padding: 2px 5px;
+                border-radius: 5px;
+                color: crimson;
+                border: 1px dotted rgba($color: crimson, $alpha: 1.0) ;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+.single{
+    display: flex;
+    width: 100%;
+    .singleContainer{
+        flex: 6;
+
+        .top{
+            padding: 20px;
+            display: flex;
+            gap: 20px;
+
+            .left{
+                box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
+                padding: 20px;
+                position: relative;
+
+                .editButton{
+                    position: absolute;
+                    top: 0px;
+                    right: 0px;
+                    font-size: 12px;
+                    color: #7451f8;
+                    background-color: #7551f818;
+                    cursor: pointer;
+                    border-radius: 0px 5px 0 0;
+                    padding: 5px;
+                }
+
+                .item {
+                    display: flex;
+                    gap: 20px;
+
+                    .itemImg{
+                        width: 100px;
+                        height: 100px;
+                        border-radius: 50%;
+                        object-fit: cover;
+                    }
+
+                    .details{
+                        .detailTitle{
+                            margin-bottom: 10px;
+                            color: #555;
+                        }
+
+                        .detailItem{
+                            margin-bottom: 10px;
+                            font-size: 14px;
+
+                            .itemKey{
+                                font-weight: bold;
+                                color: gray;
+                                margin-right: 10px;
+                            }
+
+                            .itemValue{
+                                font-weight: 300;
+                            }
+                        }
+                    }
+                }
+            }
+
+          
+        }
+
+        .right{
+            flex: 2;
+            box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
+            padding: 20px;
+        }
+
+        .bottom{
+            flex: 2;
+            box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
+            padding: 10px 20px;
+            margin: 10px;
+        }
+
+        .title{
+            font-size: 16px;
+            color: lightgray;
+        }
+    }
+}
+
+.new{
+    width: 100%;
+    display: flex;
+
+    .newContainer{
+        flex: 6;
+        
+        .top{
+            box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
+            padding: 10px;
+            margin: 20px;
+            display: flex;
+
+            h1{
+                color: lightgray;
+                font-size: 20px;
+            }
+        }
+
+        .bottom{
+            box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
+            padding: 10px;
+            margin: 20px;
+            display: flex;
+
+            .left{
+                flex: 1;
+                text-align: center;
+
+                img{
+                    width: 100px;
+                    height: 100px;
+                    border-radius: 50%;
+                    object-fit: contain;
+                }
+            }
+
+            .right{
+                flex: 2;
+
+                form{
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 30px;
+                    justify-content: space-around;
+
+                    .formInput{
+                        width: 40%;
+
+                        label{
+                            display: flex;
+                            align-items: center;
+                            gap: 10px;
+
+
+                            .icon{
+                                cursor: pointer;
+                            }
+                        }
+
+                        input{
+                            width: 100%;
+                            padding: 5px;
+                            border: none;
+                            border-bottom: 1px solid gray;
+                        }
+                    }
+
+                    button{
+                        width: 150px;
+                        padding: 15px;
+                        border: none;
+                        background-color: teal;
+                        color: white;
+                        font-weight: bold;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+        
     }
 }
